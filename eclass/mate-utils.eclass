@@ -11,7 +11,7 @@
 # packages.
 
 case "${EAPI:-0}" in
-	0|1|2|3|4) ;;
+	0|1|2|3|4|5) ;;
 	*) die "EAPI=${EAPI} is not supported" ;;
 esac
 

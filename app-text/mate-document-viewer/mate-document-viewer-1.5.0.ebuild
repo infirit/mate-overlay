@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
+EAPI="5"
 GCONF_DEBUG="yes"
 MATE_LA_PUNT="yes"
 
@@ -45,8 +45,7 @@ DEPEND="${RDEPEND}
 	~app-text/docbook-xml-dtd-4.1.2
 	virtual/pkgconfig
 	sys-devel/gettext
-	>=dev-util/intltool-0.35
-	>=dev-util/gtk-doc-am-1.13"
+	>=dev-util/intltool-0.35"
 
 ELTCONF="--portage"
 

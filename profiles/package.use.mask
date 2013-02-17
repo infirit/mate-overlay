@@ -1,0 +1,8 @@
+# GTK3 support is not working for most packages. Mask the gtk3 USE flag.
+# Needed due to EAPI 5 dying if USE is not in IUSE.
+
+mate-base/mate-desktop gtk3
+mate-base/mate-session-manager gtk3
+mate-base/mate-file-manager gtk3
+app-text/mate-document-viewer gtk3
+mate-extra/mate-power-manager gtk3

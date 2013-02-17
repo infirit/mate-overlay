@@ -15,12 +15,13 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 
-IUSE="caja dbus debug djvu dvi +introspection mate-keyring +ps t1lib tiff"
+IUSE="-gtk3 caja dbus debug djvu dvi +introspection mate-keyring +ps t1lib tiff"
 
 # Since 2.26.2, can handle poppler without cairo support. Make it optional ?
 # not mature enough
-RDEPEND="
-	>=dev-libs/glib-2.25.11:2
+RDEPEND=">=dev-libs/glib-2.25.11:2
+	gtk3? ( x11-libs/gtk+:3 )
+	!gtk3? ( x11-libs/gtk+:2 )
 	>=dev-libs/libxml2-2.5:2
 	x11-libs/gtk+:2[introspection?]
 	>=x11-libs/libSM-1

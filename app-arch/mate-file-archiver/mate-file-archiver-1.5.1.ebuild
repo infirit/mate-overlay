@@ -20,7 +20,6 @@ IUSE="caja gtk3"
 RDEPEND="gtk3? ( x11-libs/gtk+:3 )
 	!gtk3? ( x11-libs/gtk+:2 )
 	>=dev-libs/glib-2.25.5:2
-	>=mate-base/mate-conf-1.2.1
 	caja? ( >=mate-base/mate-file-manager-1.2.2 )"
 DEPEND="${RDEPEND}
 	sys-devel/gettext

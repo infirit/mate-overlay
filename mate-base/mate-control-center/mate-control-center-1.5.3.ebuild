@@ -23,7 +23,6 @@ RDEPEND="x11-libs/libXft
 	gtk3? ( x11-libs/gtk+:3 )
 	!gtk3? ( x11-libs/gtk+:2 )
 	>=dev-libs/glib-2.28:2
-	>=mate-base/mate-conf-1.2.1
 	>=gnome-base/librsvg-2.0:2
 	>=mate-base/mate-file-manager-1.2.2
 	>=media-libs/fontconfig-1

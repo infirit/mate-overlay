@@ -19,7 +19,6 @@ IUSE="cdr gajim +mail pidgin upnp"
 RDEPEND=">=x11-libs/gtk+-2.18:2
 	>=dev-libs/glib-2.25.9:2
 	>=mate-base/mate-file-manager-1.2.2
-	mail? ( >=mate-base/mate-conf-1.2.1 )
 	cdr? ( >=app-cdr/brasero-2.32.1 )
 	gajim? (
 		net-im/gajim

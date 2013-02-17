@@ -20,7 +20,6 @@ RDEPEND=">=x11-libs/gtk+-2.18:2
 	x11-libs/gdk-pixbuf:2[jpeg?,tiff?]
 	>=dev-libs/glib-2.25.9:2
 	>=dev-libs/libxml2-2
-	>=mate-base/mate-conf-1.2.1
 	>=mate-base/mate-desktop-1.2.0
 	>=x11-themes/mate-icon-theme-1.2.0
 	>=x11-misc/shared-mime-info-0.20

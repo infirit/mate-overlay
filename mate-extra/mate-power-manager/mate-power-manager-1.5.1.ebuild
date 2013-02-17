@@ -25,7 +25,6 @@ COMMON_DEPEND=">=dev-libs/glib-2.13.0:2
 	>=dev-libs/dbus-glib-0.71
 	>=x11-libs/libmatenotify-0.4.3
 	>=x11-libs/cairo-1
-	mate-base/mate-conf[policykit?]
 	>=media-libs/libcanberra-0.10[gtk]
 	>=sys-power/upower-0.9.1
 	>=dev-libs/libunique-1.1:1

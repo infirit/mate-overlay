@@ -18,7 +18,6 @@ IUSE="+introspection test"
 COMMON_DEPEND="dev-libs/glib:2
 	x11-libs/gtk+:2
 	>=x11-libs/libmatenotify-1.2.1
-	>=mate-base/mate-conf-1.2.1
 	dev-libs/dbus-glib
 	dev-libs/libunique:1"
 

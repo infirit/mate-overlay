@@ -21,7 +21,6 @@ IUSE=""
 RDEPEND=">=dev-libs/glib-2.25.12:2
 	x11-libs/gtk+:2
 	>=x11-libs/vte-0.26.0:0
-	>=mate-base/mate-conf-1.2.1
 	x11-libs/libSM
 	>=mate-base/libmate-1.2.0"
 

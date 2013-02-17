@@ -25,7 +25,6 @@ RDEPEND="x11-libs/gtk+:2
 	>=dev-libs/glib-2.34:2
 	dev-libs/libunique:1
 	>=x11-libs/libXrandr-1.2
-	>=mate-base/mate-conf-1.2.1
 	>=x11-libs/startup-notification-0.5"
 
 DEPEND="${RDEPEND}

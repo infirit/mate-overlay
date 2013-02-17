@@ -16,8 +16,7 @@ KEYWORDS="~amd64 ~arm ~x86"
 KERNEL_IUSE="kernel_linux"
 IUSE="libnotify opengl pam systemd consolekit $KERNEL_IUSE"
 
-RDEPEND=">=mate-base/mate-conf-1.2.1
-	>=x11-libs/gtk+-2.14.0:2
+RDEPEND=">=x11-libs/gtk+-2.14.0:2
 	>=mate-base/mate-desktop-1.5.3
 	>=mate-base/mate-menus-1.5.0
 	>=dev-libs/glib-2.15:2

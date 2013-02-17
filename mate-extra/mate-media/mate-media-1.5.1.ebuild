@@ -19,7 +19,6 @@ IUSE="aac flac mp3 pulseaudio speex twolame vorbis"
 COMMON_DEPEND="dev-libs/libxml2:2
 	>=dev-libs/glib-2.18.2:2
 	>=x11-libs/gtk+-2.18.0:2
-	>=mate-base/mate-conf-1.2.1
 	>=mate-base/mate-panel-1.2.1
 	>=media-libs/gstreamer-0.10.23:0.10
 	>=media-libs/gst-plugins-base-0.10.23:0.10

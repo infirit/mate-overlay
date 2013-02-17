@@ -22,7 +22,6 @@ IUSE="startup-notification test xinerama"
 RDEPEND=" >=x11-libs/pango-1.2[X]
 	>=dev-libs/glib-2.25.10:2
 	x11-libs/gtk+:2
-	>=mate-base/mate-conf-1.2.1
 	>=x11-libs/startup-notification-0.7
 	>=x11-libs/libXcomposite-0.2
 	x11-libs/libXfixes

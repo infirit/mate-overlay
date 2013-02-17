@@ -16,7 +16,6 @@ KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 RDEPEND=">=dev-libs/glib-2.20:2
-	>=mate-base/mate-conf-1.2.1
 	>=x11-libs/libmatewnck-1.3.0
 	>=gnome-base/libgtop-2.23.1:2
 	>=x11-libs/gtk+-2.20:2

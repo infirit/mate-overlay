@@ -17,8 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="python spell"
 
-RDEPEND=">=mate-base/mate-conf-1.2.1
-	>=x11-libs/libSM-1.0
+RDEPEND=">=x11-libs/libSM-1.0
 	>=dev-libs/libxml2-2.5.0:2
 	>=dev-libs/glib-2.23.1:2
 	>=x11-libs/gtk+-2.19.0:2

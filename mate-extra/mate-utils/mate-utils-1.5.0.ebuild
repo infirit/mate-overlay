@@ -19,7 +19,6 @@ IUSE="applet ipv6 test"
 RDEPEND=">=dev-libs/glib-2.20:2
 	>=x11-libs/gtk+-2.20:2
 	>=gnome-base/libgtop-2.12
-	>=mate-base/mate-conf-1.2.1
 	>=media-libs/libcanberra-0.4[gtk]
 	x11-libs/libXext
 	x11-libs/libX11

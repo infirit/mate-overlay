@@ -22,7 +22,6 @@ RDEPEND=">=dev-libs/glib-2.28.0:2
 	x11-libs/gtk+:2[introspection?]
 	>=dev-libs/libxml2-2.4.7:2
 	>=media-libs/libexif-0.5.12
-	>=mate-base/mate-conf-1.2.1
 	dev-libs/libunique:1
 	x11-libs/libXext
 	x11-libs/libXrender

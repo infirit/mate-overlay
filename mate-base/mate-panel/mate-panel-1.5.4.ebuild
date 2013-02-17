@@ -23,7 +23,6 @@ RDEPEND=">=mate-base/mate-desktop-1.2.0
 	x11-libs/gtk+:2[introspection?]
 	>=dev-libs/libmateweather-1.2.0
 	dev-libs/libxml2:2
-	>=mate-base/mate-conf-1.2.1[introspection?]
 	>=media-libs/libcanberra-0.23[gtk]
 	>=mate-base/mate-menus-1.2.0
 	gnome-base/librsvg:2

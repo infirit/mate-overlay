@@ -35,8 +35,7 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	>=dev-util/intltool-0.40.1
 	>=mate-base/mate-common-1.2.2"
-PDEPEND="mate? ( >=x11-themes/mate-icon-theme-1.2.0 )
-	>=mate-base/mate-vfs-1.4.0"
+PDEPEND="mate? ( >=x11-themes/mate-icon-theme-1.2.0 )"
 
 pkg_setup() {
 	G2CONF="${G2CONF}

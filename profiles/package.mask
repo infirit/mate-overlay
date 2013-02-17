@@ -8,6 +8,7 @@
 =dev-libs/libmateweather-1.5*
 =mate-base/libmatekbd-1.5*
 =mate-base/libmatekeyring-1.5*
+=mate-base/mate-1.5*
 =mate-base/mate-applets-1.5*
 =mate-base/mate-common-1.5*
 =mate-base/mate-control-center-1.5*

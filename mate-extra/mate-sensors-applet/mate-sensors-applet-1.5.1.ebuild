@@ -19,8 +19,6 @@ RDEPEND="
 	>=dev-libs/glib-2.14:2
 	>=x11-libs/gtk+-2.14:2
 	mate-base/mate-panel
-	>=mate-base/libmate-1.2.0
-	>=mate-base/libmateui-1.2.0
 	>=x11-libs/cairo-1.0.4
 	hddtemp? (
 		dbus? (

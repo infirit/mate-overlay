@@ -32,7 +32,6 @@ RDEPEND=">=x11-libs/gtk+-2.20:2
 	dev-libs/libmateweather
 	x11-libs/libX11
 	>=mate-base/mate-settings-daemon-1.2.0
-	mate-base/libmate
 	gnome-base/libgtop:2
 	sys-power/cpufrequtils
 	mate-extra/mate-character-map

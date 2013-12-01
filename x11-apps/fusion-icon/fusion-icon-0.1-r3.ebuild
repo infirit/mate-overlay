@@ -2,10 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: Exp $
 
-EAPI="4"
-PYTHON_DEPEND="2"
+EAPI="5"
+PYTHON_COMPAT=( python{2_6,2_7} )
 
-inherit distutils eutils gnome2-utils
+inherit distutils-r1 eutils gnome2-utils
 
 MINIMUM_COMPIZ_RELEASE=0.6.0
 
@@ -24,40 +24,30 @@ RDEPEND="
 	>=dev-python/compizconfig-python-${MINIMUM_COMPIZ_RELEASE}
 	>=x11-wm/compiz-${MINIMUM_COMPIZ_RELEASE}
 	x11-apps/xvinfo
-	gtk? ( >=dev-python/pygtk-2.10:2 )
-	qt4? ( dev-python/PyQt4[X] )"
+	gtk? ( >=dev-python/pygtk-2.10:2[${PYTHON_USEDEP}] )
+	qt4? ( dev-python/PyQt4[X,${PYTHON_USEDEP}] )"
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${PN}"
 
 PYTHON_MODNAME="FusionIcon"
 
-pkg_setup() {
-	python_set_active_version 2
-	python_pkg_setup
-}
-
 src_prepare() {
 	use mate && epatch "${FILESDIR}"/${P}-mate.patch
 	epatch "${FILESDIR}"/${P}-qt4-interface-subprocess-call.patch
-	distutils_src_prepare
+	distutils-r1_src_prepare
 }
 
-src_install() {
-	distutils_src_install
-
+python_install() {
+	distutils-r1_python_install
 	use gtk || rm -fr "${ED}$(python_get_sitedir)/FusionIcon/interface_gtk"
 	use qt4 || rm -fr "${ED}$(python_get_sitedir)/FusionIcon/interface_qt4"
 }
 
 pkg_postinst() {
-	distutils_pkg_postinst
-
 	use gtk && gnome2_icon_cache_update
 }
 
 pkg_postrm() {
-	distutils_pkg_postrm
-
 	use gtk && gnome2_icon_cache_update
 }

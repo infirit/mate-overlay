@@ -14,14 +14,13 @@ HOMEPAGE="http://mate-desktop.org"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="+applet gnome-keyring gtk3 man policykit test"
+IUSE="+applet gnome-keyring man policykit test"
 
 # FIXME: Interactive testsuite (upstream ? I'm so...pessimistic)
 RESTRICT="test"
 
 COMMON_DEPEND=">=dev-libs/glib-2.13.0:2
-	gtk3? ( x11-libs/gtk+:3 )
-	!gtk3? ( x11-libs/gtk+:2 )
+	x11-libs/gtk+:2
 	gnome-keyring? ( >=gnome-base/gnome-keyring-3.0.0 )
 	>=dev-libs/dbus-glib-0.71
 	>=x11-libs/libnotify-0.7.0
@@ -56,6 +55,7 @@ DEPEND="${COMMON_DEPEND}
 pkg_setup() {
 	G2CONF="${G2CONF}
 		--enable-unique
+		--with-gtk=2.0
 		$(use_enable applet applets)
 		$(use_with gnome-keyring keyring)
 		$(use_enable test tests)

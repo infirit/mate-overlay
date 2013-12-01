@@ -13,10 +13,9 @@ HOMEPAGE="http://mate-desktop"
 LICENSE="LGPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="gtk3 libnotify"
+IUSE="libnotify"
 
-RDEPEND="gtk3? ( x11-libs/gtk+:3 )
-	!gtk3? ( x11-libs/gtk+:2 )
+RDEPEND="x11-libs/gtk+:2
 	>=dev-libs/glib-2.8:2
 	libnotify? ( >=x11-libs/libnotify-0.7.0 )"
 DEPEND="${RDEPEND}
@@ -30,6 +29,7 @@ DEPEND="${RDEPEND}
 
 pkg_setup() {
 	G2CONF="${G2CONF}
+		--with-gtk=2.0
 		$(use_enable libnotify)"
 	DOCS="AUTHORS ChangeLog HACKING NEWS README THANKS TODO"
 }

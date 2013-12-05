@@ -65,6 +65,9 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-1.6-libsecret.patch"
+	# This fixes fixes blanking the screen with systemd/logind
+	epatch "${FILESDIR}/${PN}-1.6.2-logind-screen-blank-fix.patch"
+
 	eautoreconf
 	mate_src_prepare
 

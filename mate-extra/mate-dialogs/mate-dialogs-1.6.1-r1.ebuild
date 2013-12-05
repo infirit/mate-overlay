@@ -33,3 +33,11 @@ pkg_setup() {
 		$(use_enable libnotify)"
 	DOCS="AUTHORS ChangeLog HACKING NEWS README THANKS TODO"
 }
+
+src_prepare() {
+	# Fix datadir
+	sed -i 's:(pkgdatadir):(datadir)/matedialog:' \
+		src/Makefile.am || die
+	eautoreconf
+	mate_src_prepare
+}

@@ -23,7 +23,8 @@ REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 RDEPEND="gtk3? ( x11-libs/gtk+:2 )
 	!gtk3? ( x11-libs/gtk+:3 )
 	>=dev-libs/glib-2.13:2[${PYTHON_USEDEP}]
-	|| ( >=net-libs/libsoup-2.42.1:2.4 >=net-libs/libsoup-gnome-2.25.1:2.4 )
+	>=net-libs/libsoup-2.42.1:2.4
+	>=net-libs/libsoup-gnome-2.25.1:2.4
 	>=dev-libs/libxml2-2.6.0:2
 	>=sys-libs/timezone-data-2010k
 	python? (

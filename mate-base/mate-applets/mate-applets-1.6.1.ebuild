@@ -47,6 +47,8 @@ DEPEND="${RDEPEND}
 	>=mate-base/mate-common-1.2.2"
 
 pkg_setup() {
+	python-single-r1_pkg_setup
+
 	G2CONF="${G2CONF}
 		--libexecdir=/usr/libexec/mate-applets
 		--without-hal
@@ -74,7 +76,7 @@ src_test() {
 }
 
 src_install() {
-	python_convert_shebangs invest-applet timer-applet/src
+	python_fix_shebang invest-applet timer-applet/src
 	mate_src_install
 
 	local APPLETS="accessx-status battstat charpick cpufreq drivemount geyes

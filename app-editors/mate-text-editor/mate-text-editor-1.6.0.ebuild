@@ -5,7 +5,7 @@
 EAPI="5"
 GCONF_DEBUG="yes"
 MATE_LA_PUNT="yes"
-PYTHON_COMPAT=( python2_{5,6,7} )
+PYTHON_COMPAT=( python2_{6,7} )
 
 inherit mate multilib python-r1 virtualx
 

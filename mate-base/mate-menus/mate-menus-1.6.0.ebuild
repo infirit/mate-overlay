@@ -40,11 +40,14 @@ pkg_setup() {
 	G2CONF="${G2CONF}
 		$(use_enable python)
 		$(use_enable introspection)"
+
+	python_setup
 }
 
 src_configure() {
 	if use python; then
-		python_foreach_impl mate_src_configure
+		python_copy_sources
+		python_foreach_impl run_in_build_dir mate_src_configure
 	else
 		mate_src_configure
 	fi
@@ -52,7 +55,7 @@ src_configure() {
 
 src_compile() {
 	if use python; then
-		python_foreach_impl mate_src_compile
+		python_foreach_impl run_in_build_dir mate_src_compile
 	else
 		mate_src_compile
 	fi
@@ -60,7 +63,7 @@ src_compile() {
 
 src_test() {
 	if use python; then
-		python_foreach_impl mate_src_test
+		python_foreach_impl run_in_build_dir mate_src_test
 	else
 		default
 	fi
@@ -68,7 +71,7 @@ src_test() {
 
 src_install() {
 	if use python; then
-		python_foreach_impl mate_src_install
+		python_foreach_impl run_in_build_dir mate_src_install
 	else
 		mate_src_install
 	fi

@@ -46,18 +46,6 @@ DEPEND="${RDEPEND}
 	~app-text/docbook-xml-dtd-4.3
 	>=mate-base/mate-common-1.2.2"
 
-pkg_setup() {
-	python-single-r1_pkg_setup
-
-	G2CONF="${G2CONF}
-		--libexecdir=/usr/libexec/mate-applets
-		--without-hal
-		$(use_enable ipv6)
-		$(use_enable networkmanager)
-		$(use_enable policykit polkit)"
-	DOCS="AUTHORS ChangeLog NEWS README"
-}
-
 src_prepare() {
 	#Correct icon name, upstrean PR at:
 	#https://github.com/mate-desktop/mate-applets/pull/54
@@ -68,6 +56,17 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-1.6.1-fix-POTFILES.patch"
 
 	mate_src_prepare
+}
+
+src_configure() {
+	DOCS="AUTHORS ChangeLog NEWS README"
+
+	mate_src_configure \
+		--libexecdir=/usr/libexec/mate-applets \
+		--without-hal \
+		$(use_enable ipv6) \
+		$(use_enable networkmanager) \
+		$(use_enable policykit polkit)
 }
 
 src_test() {

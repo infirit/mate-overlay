@@ -27,17 +27,18 @@ DEPEND="${RDEPEND}
 	>=app-text/mate-doc-utils-1.5.0
 	>=mate-base/mate-common-1.5.0"
 
-pkg_setup() {
-	G2CONF="${G2CONF}
-		--with-gtk=2.0
-		$(use_enable libnotify)"
-	DOCS="AUTHORS ChangeLog HACKING NEWS README THANKS TODO"
-}
-
 src_prepare() {
 	# Fix datadir
 	sed -i 's:(pkgdatadir):(datadir)/matedialog:' \
 		src/Makefile.am || die
 	eautoreconf
 	mate_src_prepare
+}
+
+src_configure() {
+	DOCS="AUTHORS ChangeLog HACKING NEWS README THANKS TODO"
+
+	mate_src_configure \
+		--with-gtk=2.0 \
+		$(use_enable libnotify)
 }

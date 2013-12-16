@@ -52,17 +52,6 @@ DEPEND="${COMMON_DEPEND}
 # (files under ${S}/man).
 # docbook-xml-dtd-4.4 and -4.1.2 are used by the xml files under ${S}/docs.
 
-pkg_setup() {
-	G2CONF="${G2CONF}
-		--enable-unique
-		--with-gtk=2.0
-		$(use_enable applet applets)
-		$(use_with gnome-keyring keyring)
-		$(use_enable test tests)
-		--enable-compile-warnings=minimum"
-	DOCS="AUTHORS HACKING NEWS README TODO"
-}
-
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-1.6-libsecret.patch"
 	# This fixes fixes blanking the screen with systemd/logind
@@ -78,6 +67,18 @@ src_prepare() {
 	sed -e 's:@HAVE_DOCBOOK2MAN_TRUE@.*::' -i man/Makefile.in \
 		|| die "docbook sed failed"
 	fi
+}
+
+src_configure() {
+	DOCS="AUTHORS HACKING NEWS README TODO"
+
+	mate_src_configure \
+		--enable-unique \
+		--with-gtk=2.0 \
+		$(use_enable applet applets) \
+		$(use_with gnome-keyring keyring) \
+		$(use_enable test tests) \
+		--enable-compile-warnings=minimum
 }
 
 src_test() {

@@ -47,19 +47,19 @@ DEPEND="${RDEPEND}
 	~app-text/docbook-xml-dtd-4.1.2
 	>=mate-base/mate-common-1.2.2"
 
-pkg_setup() {
-	DOCS="AUTHORS ChangeLog NEWS README"
-	G2CONF="${G2CONF}
-		--disable-updater
-		$(use_enable python)
-		$(use_enable spell)"
-	python_setup
-}
-
 src_prepare() {
 	# Mate test run
 	epatch "${FILESDIR}/${PN}-1.6.0-fix-POTFILES.patch"
 	mate_src_prepare
+}
+
+src_configure() {
+	DOCS="AUTHORS ChangeLog NEWS README"
+
+	mate_src_configure \
+		--disable-updater \
+		$(use_enable python) \
+		$(use_enable spell)
 }
 
 src_test() {

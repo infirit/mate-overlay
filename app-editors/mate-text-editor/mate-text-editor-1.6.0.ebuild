@@ -7,7 +7,7 @@ GCONF_DEBUG="yes"
 MATE_LA_PUNT="yes"
 PYTHON_COMPAT=( python2_{6,7} )
 
-inherit mate multilib python-r1 virtualx
+inherit mate multilib python-single-r1 virtualx
 
 DESCRIPTION="Pluma text editor for the MATE desktop"
 HOMEPAGE="http://mate-desktop.org"

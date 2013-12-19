@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 RDEPEND="${PYTHON_DEPS}
-	>=app-text/gnome-doc-utils-0.20.10
+	>=app-text/gnome-doc-utils-0.20.10[${PYTHON_USEDEP}]
 	>=dev-libs/libxml2-2.6.12[python,${PYTHON_USEDEP}]
 	>=dev-libs/libxslt-1.1.8"
 

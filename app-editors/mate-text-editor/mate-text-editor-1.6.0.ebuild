@@ -53,6 +53,7 @@ pkg_setup() {
 		--disable-updater
 		$(use_enable python)
 		$(use_enable spell)"
+	python_setup
 }
 
 src_prepare() {

@@ -58,6 +58,9 @@ src_prepare() {
 
 	# We need pygobject-3 for invest applet
 	epatch "${FILESDIR}/${PN}-1.6.1-pygobject-configure-fix.patch"
+
+	# Fix summary for invest applet
+	sed -e 's:$BUILD_INVEST_APPLET:$HAVE_PYGOBJECT:' -i configure.ac || die
 	mate_src_prepare
 }
 

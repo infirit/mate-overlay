@@ -27,14 +27,6 @@ DEPEND="${RDEPEND}
 	>=app-text/mate-doc-utils-1.5.0
 	>=mate-base/mate-common-1.5.0"
 
-src_prepare() {
-	# Fix datadir
-	sed -i 's:(pkgdatadir):(datadir)/matedialog:' \
-		src/Makefile.am || die
-	eautoreconf
-	mate_src_prepare
-}
-
 src_configure() {
 	DOCS="AUTHORS ChangeLog HACKING NEWS README THANKS TODO"
 

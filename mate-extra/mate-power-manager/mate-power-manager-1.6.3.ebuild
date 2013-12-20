@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -9,8 +9,6 @@ inherit mate autotools
 
 DESCRIPTION="A session daemon for MATE that makes it easy to manage your laptop or desktop system"
 HOMEPAGE="http://mate-desktop.org"
-# SRC_URI="${SRC_URI} http://dev.gentoo.org/~pacho/gnome/${PN}-2.32.0-keyboard-backlight.patch.xz"
-
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
@@ -48,14 +46,8 @@ DEPEND="${COMMON_DEPEND}
 	man? ( app-text/docbook-sgml-utils
 			>=app-text/docbook-sgml-dtd-4.3 )"
 
-# docbook-sgml-utils and docbook-sgml-dtd-4.1 used for creating man pages
-# (files under ${S}/man).
-# docbook-xml-dtd-4.4 and -4.1.2 are used by the xml files under ${S}/docs.
-
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-1.6-libsecret.patch"
-	# This fixes fixes blanking the screen with systemd/logind
-	epatch "${FILESDIR}/${PN}-1.6.2-logind-screen-blank-fix.patch"
 
 	eautoreconf
 	mate_src_prepare

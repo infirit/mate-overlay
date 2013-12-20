@@ -41,6 +41,9 @@ PDEPEND="mate? ( >=x11-themes/mate-icon-theme-1.2.0 )"
 src_prepare() {
 	mate_src_prepare
 
+	# Remove -n
+	sed -e 's:Exec=caja -n:Exec=caja:g' -i \
+		data/caja.desktop || die
 	# Remove crazy CFLAGS
 	sed -i \
 		-e 's:-DG.*DISABLE_DEPRECATED::g' \

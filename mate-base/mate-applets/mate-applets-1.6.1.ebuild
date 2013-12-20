@@ -57,7 +57,7 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-1.6.1-fix-POTFILES.patch"
 
 	# We need pygobject-3 for invest applet
-	epatch "${FILESDIR}/${PN}-1.6.1-pygobject-configure-fix.patch"
+	# epatch "${FILESDIR}/${PN}-1.6.1-pygobject-configure-fix.patch"
 	mate_src_prepare
 }
 

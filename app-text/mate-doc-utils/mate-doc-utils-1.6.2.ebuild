@@ -59,7 +59,7 @@ src_test() {
 src_install() {
 	dodoc AUTHORS ChangeLog NEWS README
 	python_foreach_impl run_in_build_dir mate_src_install
-	
+
 	# Uncomment the below when we stop relying on gnome-doc-utils
 	#python_replicate_script "${ED}"/usr/bin/xml2po
 

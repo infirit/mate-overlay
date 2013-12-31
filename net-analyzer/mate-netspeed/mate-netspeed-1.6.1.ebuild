@@ -25,9 +25,3 @@ DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35.0"
 
 DOCS="AUTHORS ChangeLog README"
-
-src_prepare() {
-	mv configure.in configure.ac
-	epatch "${FILESDIR}"/${P}_fix_autoconf_warn.patch
-	mate_src_prepare
-}

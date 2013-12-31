@@ -47,23 +47,6 @@ DEPEND="${RDEPEND}
 	~app-text/docbook-xml-dtd-4.3
 	>=mate-base/mate-common-1.2.2"
 
-src_prepare() {
-	#Correct icon name, upstrean PR at:
-	#https://github.com/mate-desktop/mate-applets/pull/54
-	sed -i -e 's:Icon=invest-applet:Icon=mate-invest-applet:' \
-		invest-applet/data/org.mate.applets.InvestApplet.mate-panel-applet.in.in || die
-
-	# Make tests run
-	epatch "${FILESDIR}/${PN}-1.6.1-fix-POTFILES.patch"
-
-	# We need pygobject-3 for invest applet
-	epatch "${FILESDIR}/${PN}-1.6.1-pygobject-configure-fix.patch"
-
-	# Fix summary for invest applet
-	sed -e 's:$BUILD_INVEST_APPLET:$HAVE_PYGOBJECT:' -i configure.ac || die
-	mate_src_prepare
-}
-
 src_configure() {
 	DOCS="AUTHORS ChangeLog NEWS README"
 

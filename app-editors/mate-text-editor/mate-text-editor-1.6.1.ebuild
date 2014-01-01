@@ -7,7 +7,7 @@ GCONF_DEBUG="yes"
 MATE_LA_PUNT="yes"
 PYTHON_COMPAT=( python2_{6,7} )
 
-inherit mate multilib python-single-r1 virtualx
+inherit autotools mate multilib python-single-r1 virtualx
 
 DESCRIPTION="Pluma text editor for the MATE desktop"
 HOMEPAGE="http://mate-desktop.org"
@@ -46,6 +46,12 @@ DEPEND="${RDEPEND}
 	app-text/mate-doc-utils
 	~app-text/docbook-xml-dtd-4.1.2
 	>=mate-base/mate-common-1.2.2"
+
+src_prepare() {
+	epatch "${FILESDIR}/${PN}-1.6.1-gettext-fix.patch"
+	eautoreconf
+	mate_src_prepare
+}
 
 src_configure() {
 	DOCS="AUTHORS ChangeLog NEWS README"

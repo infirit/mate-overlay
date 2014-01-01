@@ -53,12 +53,6 @@ DEPEND="${COMMON_DEPEND}
 	>=dev-util/intltool-0.35.0
 	!!<mate-base/mate-applets-1.6.0"
 
-src_prepare() {
-	# Fix tests
-	epatch "${FILESDIR}/${PN}-1.6.0-fix-POTFILES.patch"
-	mate_src_prepare
-}
-
 src_configure() {
 	DOCS="AUTHORS ChangeLog* NEWS README"
 

@@ -44,6 +44,14 @@ DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.40
 	virtual/pkgconfig"
 
+src_prepare() {
+	# Fix ui translations, fixed upstream so next release should be ok.
+	sed -e 's|^GETTEXT_PACKAGE=AC_PACKAGE_NAME|GETTEXT_PACKAGE=eom|' \
+		-i configure.ac || die
+	eautoreconf
+	mate_src_prepare
+}
+
 src_configure() {
 	DOCS="AUTHORS ChangeLog HACKING NEWS README THANKS TODO"
 

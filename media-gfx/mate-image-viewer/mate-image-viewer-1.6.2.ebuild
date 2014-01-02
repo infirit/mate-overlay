@@ -46,9 +46,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	# Fix ui translations, fixed upstream so next release should be ok.
-	sed -e 's|^GETTEXT_PACKAGE=AC_PACKAGE_NAME|GETTEXT_PACKAGE=eom|' \
-		-i configure.ac || die
-	eautoreconf
+	sed -e 's|(PACKAGE|(GETTEXT_PACKAGE|g' \
+		-i src/main.c || die "sed failed"
 	mate_src_prepare
 }
 

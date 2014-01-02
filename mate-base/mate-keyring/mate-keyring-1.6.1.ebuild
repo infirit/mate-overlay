@@ -38,6 +38,10 @@ PDEPEND=">=mate-base/libmatekeyring-1.6.0"
 RESTRICT="test"
 
 src_prepare() {
+	sed -e 's/DOC_MODULE=gck/DOC_MODULE=mate-gck/' \
+		-i docs/reference/gck/Makefile.am || die
+	eautoreconf
+
 	mate_src_prepare
 
 	# Remove silly CFLAGS
@@ -47,6 +51,8 @@ src_prepare() {
 	# Remove DISABLE_DEPRECATED flags
 	sed -e '/-D[A-Z_]*DISABLE_DEPRECATED/d' \
 		-i configure.ac configure || die "sed DISABLE_DEPRECATED failed"
+	
+	rm 
 }
 
 src_configure() {

@@ -4,7 +4,7 @@
 
 EAPI="5"
 GCONF_DEBUG="no"
-MATE_LA_PUNT="yes"
+GNOME2_LA_PUNT="yes"
 
 inherit eutils mate
 
@@ -53,7 +53,7 @@ src_configure() {
 		myconf="${myconf} --disable-udisks"
 	fi
 
-	mate_src_configure \
+	gnome2_src_configure \
 		--disable-scrollkeeper \
 		--disable-static \
 		$(use_enable libnotify) \

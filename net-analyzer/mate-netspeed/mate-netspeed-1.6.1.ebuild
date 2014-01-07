@@ -25,3 +25,11 @@ DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35.0"
 
 DOCS="AUTHORS ChangeLog README"
+
+src_prepare() {
+	# Tarball has no proper build system, should be fixed on next release.
+	mate_gen_build_system
+
+	gnome2_src_prepare
+}
+

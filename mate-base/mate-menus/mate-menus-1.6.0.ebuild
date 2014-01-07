@@ -4,7 +4,7 @@
 
 EAPI="5"
 GCONF_DEBUG="no"
-MATE_LA_PUNT="yes"
+GNOME2_LA_PUNT="yes"
 
 PYTHON_COMPAT=( python2_{6,7} )
 
@@ -28,6 +28,13 @@ DEPEND="${RDEPEND}
 	>=mate-base/mate-common-1.5.0
 	>=dev-util/intltool-0.40"
 
+src_prepare() {
+	# Tarball has no proper build system, should be fixed on next release.
+	mate_gen_build_system
+
+	gnome2_src_prepare
+}
+
 src_configure() {
 	DOCS="AUTHORS ChangeLog NEWS README"
 
@@ -38,30 +45,30 @@ src_configure() {
 		myconf="${myconf} --enable-debug=minimum"
 	fi
 
-	mate_src_configure \
+	gnome2_src_configure \
 		$(use_enable python) \
 		$(use_enable introspection) \
 		${myconf}
 
 	if use python; then
 		python_copy_sources
-		python_foreach_impl run_in_build_dir mate_src_configure
+		python_foreach_impl run_in_build_dir gnome2_src_configure
 	else
-		mate_src_configure
+		gnome2_src_configure
 	fi
 }
 
 src_compile() {
 	if use python; then
-		python_foreach_impl run_in_build_dir mate_src_compile
+		python_foreach_impl run_in_build_dir gnome2_src_compile
 	else
-		mate_src_compile
+		gnome2_src_compile
 	fi
 }
 
 src_test() {
 	if use python; then
-		python_foreach_impl run_in_build_dir mate_src_test
+		python_foreach_impl run_in_build_dir gnome2_src_test
 	else
 		default
 	fi
@@ -69,9 +76,9 @@ src_test() {
 
 src_install() {
 	if use python; then
-		python_foreach_impl run_in_build_dir mate_src_install
+		python_foreach_impl run_in_build_dir gnome2_src_install
 	else
-		mate_src_install
+		gnome2_src_install
 	fi
 
 	exeinto /etc/X11/xinit/xinitrc.d/

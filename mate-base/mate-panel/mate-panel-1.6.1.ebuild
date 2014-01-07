@@ -4,7 +4,7 @@
 
 EAPI="5"
 GCONF_DEBUG="no"
-MATE_LA_PUNT="yes"
+GNOME2_LA_PUNT="yes"
 PYTHON_COMPAT=( python2_{6,7} )
 
 inherit mate python-r1
@@ -48,13 +48,13 @@ src_prepare() {
 		-i data/mate-panel.convert || die
 	sed -e '/object-id-list \= \/apps\/panel\/general\/object_id_list/d' \
 		-i data/mate-panel.convert || die
-	mate_src_prepare
+	gnome2_src_prepare
 }
 
 src_configure() {
 	DOCS="AUTHORS ChangeLog HACKING NEWS README"
 
-	mate_src_configure \
+	gnome2_src_configure \
 		--libexecdir=/usr/libexec/mate-applets \
 		--disable-deprecation-flags \
 		$(use_enable networkmanager network-manager) \

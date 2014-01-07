@@ -4,7 +4,7 @@
 
 EAPI="5"
 GCONF_DEBUG="yes"
-MATE_LA_PUNT="yes"
+GNOME2_LA_PUNT="yes"
 PYTHON_COMPAT=( python2_{6,7} )
 
 inherit mate python-r1 multilib
@@ -44,13 +44,13 @@ PDEPEND=">=dev-python/pygtk-2.8:2[${PYTHON_USEDEP}]
 src_configure() {
 	DOCS="AUTHORS ChangeLog HACKING NEWS README"
 
-	mate_src_configure \
+	gnome2_src_configure \
 		--enable-mate-conf-import \
 		--with-gtk=2.0
 }
 
 src_install() {
-	mate_src_install
+	gnome2_src_install
 	# Do migrate script foo see url:
 	# https://github.com/Sabayon/mate-overlay/issues/38
 	rm "${D}"/usr/share/applications/mate-conf-import.desktop || die "rm failed"

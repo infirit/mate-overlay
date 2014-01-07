@@ -4,7 +4,7 @@
 
 EAPI="5"
 GCONF_DEBUG="yes"
-MATE_LA_PUNT="yes"
+GNOME2_LA_PUNT="yes"
 
 inherit mate pam virtualx
 
@@ -42,7 +42,7 @@ src_prepare() {
 		-i docs/reference/gck/Makefile.am || die
 	eautoreconf
 
-	mate_src_prepare
+	gnome2_src_prepare
 
 	# Remove silly CFLAGS
 	sed 's:CFLAGS="$CFLAGS -Werror:CFLAGS="$CFLAGS:' \
@@ -58,7 +58,7 @@ src_prepare() {
 src_configure() {
 	DOCS="AUTHORS ChangeLog NEWS README"
 
-	mate_src_configure \
+	gnome2_src_configure \
 		$(use_enable debug) \
 		$(use_enable test tests) \
 		$(use_enable pam) \

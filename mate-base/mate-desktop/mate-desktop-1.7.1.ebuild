@@ -4,7 +4,7 @@
 
 EAPI="5"
 GCONF_DEBUG="yes"
-MATE_LA_PUNT="yes"
+GNOME2_LA_PUNT="yes"
 PYTHON_COMPAT=( python2_{6,7} )
 
 inherit mate python-r1
@@ -45,7 +45,7 @@ PDEPEND=">=dev-python/pygtk-2.8:2[${PYTHON_USEDEP}]
 src_prepare() {
 	# *Very* dirty hack so it installs, fixed in next release 
 	touch "${S}/tools/mate-conf-import" || die
-	mate_src_prepare
+	gnome2_src_prepare
 }
 
 src_configure() {
@@ -56,14 +56,14 @@ src_configure() {
 	use !gtk3 && myconf="${myconf} --with-gtk=2.0"
 
 	#Disable desktop help due to file collision
-	mate_src_configure \
+	gnome2_src_configure \
 		--enable-mate-conf-import \
 		--disable-desktop-docs \
 		${myconf}
 }
 
 src_install() {
-	mate_src_install
+	gnome2_src_install
 	# Do migrate script foo see url:
 	# https://github.com/Sabayon/mate-overlay/issues/38
 	rm "${D}"/usr/share/applications/mate-conf-import.desktop || die "rm failed"

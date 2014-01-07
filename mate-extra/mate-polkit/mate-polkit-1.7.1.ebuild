@@ -34,7 +34,7 @@ ENTROPY_RDEPEND="!lxde-base/lxpolkit"
 
 src_prepare() {
 	eautoreconf
-	mate_src_prepare
+	gnome2_src_prepare
 }
 
 src_configure() {
@@ -44,7 +44,7 @@ src_configure() {
 	use gtk3 && myconf="${myconf} --with-gtk=3.0"
 	use !gtk3 && myconf="${myconf} --with-gtk=2.0"
 
-	mate_src_configure \
+	gnome2_src_configure \
 		--disable-static \
 		$(use_enable introspection) \
 		${myconf}

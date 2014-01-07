@@ -34,5 +34,5 @@ src_configure() {
 	use gtk3 && myconf="${myconf} --with-gtk=3.0"
 	use !gtk3 && myconf="${myconf} --with-gtk=2.0"
 
-	mate_src_configure ${myconf}
+	gnome2_src_configure ${myconf}
 }

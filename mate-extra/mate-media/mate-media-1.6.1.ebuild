@@ -56,14 +56,14 @@ DEPEND="${COMMON_DEPEND}
 src_configure() {
 	DOCS="AUTHORS ChangeLog* NEWS README"
 
-	mate_src_configure \
+	gnome2_src_configure \
 		$(use_enable pulseaudio) \
 		$(use_enable !pulseaudio gstmix) \
 		$(use_enable !pulseaudio gst-mixer-applet)
 }
 
 pkg_postinst() {
-	mate_pkg_postinst
+	gnome2_pkg_postinst
 	ewarn
 	ewarn "If you cannot play some music format, please check your"
 	ewarn "USE flags on media-plugins/gst-plugins-meta"

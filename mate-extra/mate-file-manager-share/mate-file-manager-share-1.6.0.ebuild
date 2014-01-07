@@ -4,7 +4,7 @@
 
 EAPI=5
 
-MATE_LA_PUNT="yes"
+GNOME2_LA_PUNT="yes"
 GCONF_DEBUG="no"
 
 inherit mate eutils user
@@ -31,17 +31,20 @@ USERSHARES_GROUP="samba"
 src_prepare() {
 	# Remove obsolete files to make test run
 	rm src/caja-share.c src/caja-share.h || die
-	mate_src_prepare
+	gnome2_src_prepare
 }
 
 src_configure() {
 	DOCS="AUTHORS ChangeLog NEWS README TODO"
 
-	mate_src_configure --disable-static
+	# Tarball has no proper build system, should be fixed on next release.
+	mate_gen_build_system
+
+	gnome2_src_configure --disable-static
 }
 
 src_install() {
-	mate_src_install
+	gnome2_src_install
 	keepdir ${USERSHARES_DIR}
 }
 

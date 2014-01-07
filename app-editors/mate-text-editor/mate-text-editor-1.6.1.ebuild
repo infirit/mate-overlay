@@ -4,7 +4,7 @@
 
 EAPI="5"
 GCONF_DEBUG="yes"
-MATE_LA_PUNT="yes"
+GNOME2_LA_PUNT="yes"
 PYTHON_COMPAT=( python2_{6,7} )
 
 inherit autotools mate multilib python-single-r1 virtualx
@@ -50,13 +50,13 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-1.6.1-gettext-fix.patch"
 	eautoreconf
-	mate_src_prepare
+	gnome2_src_prepare
 }
 
 src_configure() {
 	DOCS="AUTHORS ChangeLog NEWS README"
 
-	mate_src_configure \
+	gnome2_src_configure \
 		--disable-updater \
 		$(use_enable python) \
 		$(use_enable spell)

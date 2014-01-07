@@ -48,13 +48,13 @@ src_prepare() {
 	# Fix ui translations, fixed upstream so next release should be ok.
 	sed -e 's|(PACKAGE|(GETTEXT_PACKAGE|g' \
 		-i src/main.c || die "sed failed"
-	mate_src_prepare
+	gnome2_src_prepare
 }
 
 src_configure() {
 	DOCS="AUTHORS ChangeLog HACKING NEWS README THANKS TODO"
 
-	mate_src_configure \
+	gnome2_src_configure \
 		$(use_enable python) \
 		$(use_with jpeg libjpeg) \
 		$(use_with exif libexif) \

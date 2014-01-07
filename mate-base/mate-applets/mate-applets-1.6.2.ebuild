@@ -50,7 +50,7 @@ DEPEND="${RDEPEND}
 src_configure() {
 	DOCS="AUTHORS ChangeLog NEWS README"
 
-	mate_src_configure \
+	gnome2_src_configure \
 		--libexecdir=/usr/libexec/mate-applets \
 		--without-hal \
 		$(use_enable ipv6) \
@@ -65,7 +65,7 @@ src_test() {
 
 src_install() {
 	python_fix_shebang invest-applet timer-applet/src
-	mate_src_install
+	gnome2_src_install
 
 	local APPLETS="accessx-status battstat charpick cpufreq drivemount geyes
 			invest-applet mateweather mini-commander mixer modemlights

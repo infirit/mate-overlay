@@ -4,7 +4,7 @@
 
 EAPI="5"
 GCONF_DEBUG="no"
-MATE_LA_PUNT="yes"
+GNOME2_LA_PUNT="yes"
 
 inherit mate
 
@@ -31,7 +31,7 @@ src_configure() {
 	use gtk3 && myconf="${myconf} --with-gtk=3.0"
 	use !gtk3 && myconf="${myconf} --with-gtk=2.0"
 
-	mate_src_configure \
+	gnome2_src_configure \
 		$(use_enable test tests) \
 		${myconf}
 }

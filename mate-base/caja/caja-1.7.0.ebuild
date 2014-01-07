@@ -4,7 +4,7 @@
 
 EAPI="5"
 GCONF_DEBUG="yes"
-MATE_LA_PUNT="yes"
+GNOME2_LA_PUNT="yes"
 
 inherit mate virtualx
 
@@ -42,7 +42,7 @@ DEPEND="${RDEPEND}
 PDEPEND="mate? ( >=x11-themes/mate-icon-theme-1.2.0 )"
 
 src_prepare() {
-	mate_src_prepare
+	gnome2_src_prepare
 
 	# Remove crazy CFLAGS
 	sed -i \
@@ -57,7 +57,7 @@ src_configure() {
 	use gtk3 && myconf="${myconf} --with-gtk=3.0"
 	use !gtk3 && myconf="${myconf}} --with-gtk=2.0"
 
-	mate_src_configure \
+	gnome2_src_configure \
 		--disable-update-mimedb \
 		--disable-packagekit \
 		--enable-unique \
@@ -73,7 +73,7 @@ src_test() {
 }
 
 pkg_postinst() {
-	mate_pkg_postinst
+	gnome2_pkg_postinst
 
 	elog "caja can use gstreamer to preview audio files. Just make sure"
 	elog "to have the necessary plugins available to play the media type you"

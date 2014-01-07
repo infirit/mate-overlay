@@ -4,7 +4,7 @@
 
 EAPI="5"
 GCONF_DEBUG="no"
-MATE_LA_PUNT="yes"
+GNOME2_LA_PUNT="yes"
 
 inherit mate multilib
 
@@ -43,7 +43,7 @@ DEPEND="${RDEPEND}
 src_configure() {
 	DOCS="AUTHORS ChangeLog NEWS README"
 
-	mate_src_configure \
+	gnome2_src_configure \
 		--with-httpd=apache2 \
 		--with-modules-path=/usr/$(get_libdir)/apache2/modules/
 }

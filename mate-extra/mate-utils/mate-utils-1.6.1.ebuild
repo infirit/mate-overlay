@@ -4,7 +4,7 @@
 
 EAPI="5"
 GCONF_DEBUG="yes"
-MATE_LA_PUNT="yes"
+GNOME2_LA_PUNT="yes"
 
 inherit mate
 
@@ -32,7 +32,7 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	>=mate-base/mate-common-1.5.0"
 src_prepare() {
-	mate_src_prepare
+	gnome2_src_prepare
 
 	# Remove idiotic -D.*DISABLE_DEPRECATED cflags
 	# This method is kinda prone to breakage. Recheck carefully with next bump.
@@ -61,7 +61,7 @@ src_configure() {
 		myconf="${myconf} --enable-debug=minimum"
 	fi
 
-	mate_src_configure \
+	gnome2_src_configure \
 		$(use_enable ipv6) \
 		$(use_enable applet gdict-applet) \
 		--disable-maintainer-flags \

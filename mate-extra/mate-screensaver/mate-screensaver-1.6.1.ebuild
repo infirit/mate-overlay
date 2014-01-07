@@ -57,13 +57,13 @@ src_prepare() {
 	sed -i 's:org.gnome:org.mate:' po/POTFILES.in || die "sed failed"
 	# Make tests work
 	sed -i '6 a\data/lock-dialog-default.ui' po/POTFILES.in || die "sed failed"
-	mate_src_prepare
+	gnome2_src_prepare
 }
 
 src_configure() {
 	DOCS="AUTHORS ChangeLog NEWS README"
 
-	mate_src_configure \
+	gnome2_src_configure \
 		$(use_enable debug) \
 		$(use_with libnotify) \
 		$(use_with opengl libgl) \
@@ -78,7 +78,7 @@ src_configure() {
 }
 
 src_install() {
-	mate_src_install
+	gnome2_src_install
 
 	# Install the conversion script in the documentation
 	dodoc "${S}/data/migrate-xscreensaver-config.sh"
@@ -94,7 +94,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	mate_pkg_postinst
+	gnome2_pkg_postinst
 
 	if has_version "<x11-base/xorg-server-1.5.3-r4" ; then
 		ewarn "You have a too old xorg-server installation. This will cause"

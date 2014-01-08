@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-inherit autotools mate
+inherit mate
 
 RESTRICT="test"
 

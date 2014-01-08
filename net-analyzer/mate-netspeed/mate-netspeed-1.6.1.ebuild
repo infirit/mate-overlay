@@ -32,4 +32,3 @@ src_prepare() {
 
 	gnome2_src_prepare
 }
-

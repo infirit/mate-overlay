@@ -51,8 +51,8 @@ src_prepare() {
 	# Remove DISABLE_DEPRECATED flags
 	sed -e '/-D[A-Z_]*DISABLE_DEPRECATED/d' \
 		-i configure.ac configure || die "sed DISABLE_DEPRECATED failed"
-	
-	rm 
+
+	rm
 }
 
 src_configure() {

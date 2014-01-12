@@ -40,15 +40,13 @@ src_configure() {
 
 	# Do NOT compile with --disable-debug/--enable-debug=no
 	# It disables api usage checks
-	local myconf
-	if ! use debug ; then
-		myconf="${myconf} --enable-debug=minimum"
-	fi
-
-	gnome2_src_configure \
+	G2CONF="${G2CONF} \
 		$(use_enable python) \
-		$(use_enable introspection) \
-		${myconf}
+		$(use_enable introspection)"
+
+	if ! use debug ; then
+		G2CONF="${G2CONF} --enable-debug=minimum"
+	fi
 
 	if use python; then
 		python_copy_sources
@@ -68,9 +66,9 @@ src_compile() {
 
 src_test() {
 	if use python; then
-		python_foreach_impl run_in_build_dir gnome2_src_test
+		python_foreach_impl run_in_build_dir emake check
 	else
-		default
+		emake check
 	fi
 }
 

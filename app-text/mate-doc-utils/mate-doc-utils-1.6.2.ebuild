@@ -53,7 +53,7 @@ src_compile() {
 }
 
 src_test() {
-	python_foreach_impl run_in_build_dir gnome2_src_test
+	python_foreach_impl run_in_build_dir emake check
 }
 
 src_install() {

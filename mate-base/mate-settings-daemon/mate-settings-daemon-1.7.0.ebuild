@@ -69,18 +69,18 @@ src_configure() {
 	# README is empty
 	DOCS="AUTHORS NEWS ChangeLog"
 
-	local myconf
-	use gtk3 && myconf="${myconf} --with-gtk=3.0"
-	use !gtk3 && myconf="${myconf} --with-gtk=2.0"
+	G2CONF="${G2CONF}
+		$(use_with libnotify)
+		$(use_enable debug)
+		$(use_enable policykit polkit)
+		$(use_enable pulseaudio pulse)
+		$(use_enable !pulseaudio gstreamer)
+		$(use_enable smartcard smartcard-support)"
 
-	gnome2_src_configure \
-		$(use_with libnotify) \
-		$(use_enable debug) \
-		$(use_enable policykit polkit) \
-		$(use_enable pulseaudio pulse) \
-		$(use_enable !pulseaudio gstreamer) \
-		$(use_enable smartcard smartcard-support) \
-		${myconf}
+	use gtk3 && G2CONF="${G2CONF} --with-gtk=3.0"
+	use !gtk3 && G2CONF="${G2CONF} --with-gtk=2.0"
+
+	gnome2_src_configure
 
 	if use pulseaudio; then
 		elog "Building volume media keys using Pulseaudio"

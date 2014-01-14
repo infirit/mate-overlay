@@ -47,21 +47,19 @@ src_prepare() {
 src_configure() {
 	DOCS="AUTHORS ChangeLog HACKING NEWS README"
 
-	local myconf
-	use gtk3 && myconf="${myconf} --with-gtk=3.0"
-	use !gtk3 && myconf="${myconf} --with-gtk=2.0"
-
 	#Disable desktop doc due to file collision
-	gnome2_src_configure \
-		--enable-mate-conf-import \
-		--disable-desktop-docs \
-		${myconf}
+	G2CONF="${G2CONF}
+		--enable-mate-conf-import
+		--disable-desktop-docs"
 
+	use gtk3 && G2CONF="${G2CONF} --with-gtk=3.0"
+	use !gtk3 && G2CONF="${G2CONF} --with-gtk=2.0"
+	gnome2_src_configure
 }
 
 src_install() {
 	gnome2_src_install
-	# Do migrate script foo see url:
+	# Do migrate script fu see url:
 	# https://github.com/Sabayon/mate-overlay/issues/38
 	rm "${D}"/usr/share/applications/mate-conf-import.desktop || die "rm failed"
 	mkdir "${D}"/usr/$(get_libdir)/mate-desktop || die "mkdir failed"

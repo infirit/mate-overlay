@@ -56,14 +56,14 @@ src_prepare() {
 src_configure() {
 	DOCS="AUTHORS ChangeLog HACKING NEWS README"
 
-	local myconf
-	use gtk3 && myconf="${myconf} --with-gtk=3.0"
-	use !gtk3 && myconf="${myconf} --with-gtk=2.0"
+	G2CONF="${G2CONF}
+		--libexecdir=/usr/libexec/mate-applets
+		--disable-deprecation-flags
+		$(use_enable networkmanager network-manager)
+		$(use_enable introspection)"
 
-	gnome2_src_configure \
-		--libexecdir=/usr/libexec/mate-applets \
-		--disable-deprecation-flags \
-		$(use_enable networkmanager network-manager) \
-		$(use_enable introspection) \
-		${myconf}
+	use gtk3 && G2CONF="${G2CONF} --with-gtk=3.0"
+	use !gtk3 && G2CONF="${G2CONF} --with-gtk=2.0"
+
+	gnome2_src_configure
 }

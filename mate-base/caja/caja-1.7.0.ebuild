@@ -53,17 +53,17 @@ src_prepare() {
 src_configure() {
 	DOCS="AUTHORS ChangeLog* HACKING MAINTAINERS NEWS README THANKS TODO"
 
-	local myconf
-	use gtk3 && myconf="${myconf} --with-gtk=3.0"
-	use !gtk3 && myconf="${myconf}} --with-gtk=2.0"
+	G2CONF="${G2CONF}
+		--disable-update-mimedb
+		--disable-packagekit
+		--enable-unique
+		$(use_enable introspection)
+		$(use_enable xmp)"
 
-	gnome2_src_configure \
-		--disable-update-mimedb \
-		--disable-packagekit \
-		--enable-unique \
-		${myconf} \
-		$(use_enable introspection) \
-		$(use_enable xmp)
+	use gtk3 && G2CONF="${G2CONF} --with-gtk=3.0"
+	use !gtk3 && G2CONF="${G2CONF} --with-gtk=2.0"
+
+	gnome2_src_configure
 }
 
 src_test() {

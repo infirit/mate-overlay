@@ -40,12 +40,12 @@ src_prepare() {
 src_configure() {
 	DOCS="AUTHORS HACKING NEWS README"
 
-	local myconf
-	use gtk3 && myconf="${myconf} --with-gtk=3.0"
-	use !gtk3 && myconf="${myconf} --with-gtk=2.0"
+	G2CONF="${G2CONF}
+		--disable-static
+		$(use_enable introspection)"
 
-	gnome2_src_configure \
-		--disable-static \
-		$(use_enable introspection) \
-		${myconf}
+	use gtk3 && G2CONF="${G2CONF} --with-gtk=3.0"
+	use !gtk3 && G2CONF="${G2CONF} --with-gtk=2.0"
+
+	gnome2_src_configure
 }

@@ -71,8 +71,7 @@ src_configure() {
 		$(use_with libnotify) \
 		$(use_enable policykit polkit) \
 		$(use_enable pulseaudio pulse) \
-		$(use_enable !pulseaudio gstmix) \
-		$(use_enable !pulseaudio gst-mixer-applet) \
+		$(use_enable !pulseaudio gstreamer) \
 		$(use_enable smartcard smartcard-support)
 
 	if use pulseaudio; then

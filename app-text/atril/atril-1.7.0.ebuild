@@ -39,6 +39,7 @@ RDEPEND=">=dev-libs/glib-2.32.0:2
 	tiff? ( >=media-libs/tiff-3.6:0 )
 	xps? ( >=app-text/libgxps-0.0.1 )"
 DEPEND="${RDEPEND}
+	!!app-text/mate-document-viewer
 	app-text/scrollkeeper
 	~app-text/docbook-xml-dtd-4.1.2
 	virtual/pkgconfig
@@ -62,8 +63,6 @@ src_configure() {
 
 	# Passing --disable-help would drop offline help, that would be inconsistent
 	# with helps of the most of Gnome apps that doesn't require network for that.
-
-
 	G2CONF="${G2CONF}
 		--disable-tests
 		--enable-pdf
@@ -72,8 +71,6 @@ src_configure() {
 		--enable-pixbuf
 		--with-smclient=xsmp
 		--with-platform=mate
-		--with-gtk=2.0
-		--enable-help
 		$(use_enable dbus)
 		$(use_enable djvu)
 		$(use_enable dvi)

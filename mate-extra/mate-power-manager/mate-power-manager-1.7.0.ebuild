@@ -63,13 +63,16 @@ src_prepare() {
 src_configure() {
 	DOCS="AUTHORS HACKING NEWS README TODO"
 
-	gnome2_src_configure \
-		--enable-unique \
-		--with-gtk=2.0 \
-		$(use_enable applet applets) \
-		$(use_with gnome-keyring keyring) \
-		$(use_enable test tests) \
-		--enable-compile-warnings=minimum
+	G2CONF="${G2CONF}
+		--enable-unique
+		$(use_enable applet applets)
+		$(use_with gnome-keyring keyring)
+		$(use_enable test tests)
+		--enable-compile-warnings=minimum"
+	use gtk3 && G2CONF="${G2CONF} --with-gtk=3.0"
+	use !gtk3 && G2CONF="${G2CONF} --with-gtk=2.0"
+
+	gnome2_src_configure
 }
 
 src_test() {

@@ -39,7 +39,7 @@ RDEPEND=">=mate-base/libmatekbd-1.7.0[gtk3?]
 		>=app-editors/pluma-1.7.0
 		>=app-arch/engrampa-1.7.0
 		>=media-gfx/mate-image-viewer-1.6.0
-		>=app-text/mate-document-viewer-1.7.0
+		>=app-text/atril-1.7.0
 		>=mate-extra/mate-system-monitor-1.7.0
 		>=mate-extra/mate-calc-1.7.0
 		>=mate-extra/mate-screensaver-1.7.0

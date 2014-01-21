@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="gtk3 ipv6 networkmanager policykit"
 
-RDEPEND="dev-libs/glib-2.22:2
+RDEPEND=">=dev-libs/glib-2.22:2
 	!gtk3? ( x11-libs/gtk+:2 )
 	gtk3? ( x11-libs/gtk+:3 )
 	>=mate-base/mate-panel-1.7.0

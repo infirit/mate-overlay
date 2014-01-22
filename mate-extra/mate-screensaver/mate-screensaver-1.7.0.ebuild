@@ -47,36 +47,31 @@ DEPEND="${RDEPEND}
 	consolekit? ( sys-auth/consolekit )"
 
 src_prepare() {
-	#epatch "${FILESDIR}/${PN}-1.2.0-prevent-multiple-instances.patch"
-	# Fix QA warnings due to missing includes in popsquares
-	epatch "${FILESDIR}/${PN}-1.2.0-fix-popsquares-includes.patch"
-	# Fix libgl typo in configure.ac
-	epatch "${FILESDIR}/${PN}-1.2.0-fix-with-libgl.patch"
-	# Fix intltoolize broken file, see upstream #577133
-	sed "s:'\^\$\$lang\$\$':\^\$\$lang\$\$:g" -i po/Makefile.in.in \
-		|| die "sed failed"
-	# Fix forgotten gnome->mate rename
-	sed -i 's:org.gnome:org.mate:' po/POTFILES.in || die "sed failed"
-	# Make tests work
-	sed -i '6 a\data/lock-dialog-default.ui' po/POTFILES.in || die "sed failed"
+	# We use gnome-keyring now, update pam file
+	sed -e 's:mate_keyring:gnome_keyring:g' -i data/mate-screensaver || die "sed failed"
 	gnome2_src_prepare
+
 }
 
 src_configure() {
 	DOCS="AUTHORS ChangeLog NEWS README"
 
-	gnome2_src_configure \
-		$(use_enable debug) \
-		$(use_with libnotify) \
-		$(use_with opengl libgl) \
-		$(use_enable pam) \
-		$(use_with systemd) \
-		$(use_with consolekit console-kit) \
-		--enable-locking \
-		--with-xf86gamma-ext \
-		--with-kbd-layout-indicator \
-		--with-xscreensaverdir=/usr/share/xscreensaver/config \
-		--with-xscreensaverhackdir=/usr/$(get_libdir)/misc/xscreensaver
+	G2CONF="${G2CONF}
+		$(use_enable debug)
+		$(use_with libnotify)
+		$(use_with opengl libgl)
+		$(use_enable pam)
+		$(use_with systemd)
+		$(use_with consolekit console-kit)
+		--enable-locking
+		--with-xf86gamma-ext
+		--with-kbd-layout-indicator
+		--with-xscreensaverdir=/usr/share/xscreensaver/config
+		--with-xscreensaverhackdir=/usr/$(get_libdir)/misc/xscreensaver"
+		use gtk3 && G2CONF="${G2CONF} --with-gtk=3.0"
+		use!gtk3 && G2CONF="${G2CONF} --with-gtk=2.0"
+
+		gnome2_src_configure
 }
 
 src_install() {

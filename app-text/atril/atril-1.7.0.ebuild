@@ -54,6 +54,8 @@ RESTRICT="test"
 src_prepare() {
 	# Fix .desktop categories, upstream bug #666346
 	sed -e "s:GTK\;Graphics\;VectorGraphics\;Viewer\;:GTK\;Office\;Viewer\;Graphics\;VectorGraphics;:g" -i data/atril.desktop.in.in || die
+	#Various build issues pulled from git.
+	epatch "${FILESDIR}/${PN}-1.7.0-build-fixes.patch"
 
 	gnome2_src_prepare
 }

@@ -57,6 +57,8 @@ src_prepare() {
 	sed -i 's:org.gnome:org.mate:' po/POTFILES.in || die "sed failed"
 	# Make tests work
 	sed -i '6 a\data/lock-dialog-default.ui' po/POTFILES.in || die "sed failed"
+	# We use gnome-keyring now, update pam file
+	sed -e 's:mate_keyring:gnome_keyring:g' -i data/mate-screensaver || die "sed failed"
 	gnome2_src_prepare
 }
 

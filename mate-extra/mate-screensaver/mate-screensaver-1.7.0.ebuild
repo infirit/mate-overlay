@@ -69,7 +69,7 @@ src_configure() {
 		--with-xscreensaverdir=/usr/share/xscreensaver/config
 		--with-xscreensaverhackdir=/usr/$(get_libdir)/misc/xscreensaver"
 		use gtk3 && G2CONF="${G2CONF} --with-gtk=3.0"
-		use!gtk3 && G2CONF="${G2CONF} --with-gtk=2.0"
+		use !gtk3 && G2CONF="${G2CONF} --with-gtk=2.0"
 
 		gnome2_src_configure
 }

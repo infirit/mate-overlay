@@ -13,7 +13,7 @@ HOMEPAGE="http://mate-desktop.org"
 LICENSE="LGPL-2 GPL-2 FDL-1.1"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="aac flac mp3 pulseaudio speex twolame vorbis"
+IUSE="aac flac gtk3 mp3 pulseaudio speex twolame vorbis"
 
 # FIXME: automagic dev-util/glade:3 support
 COMMON_DEPEND="dev-libs/libxml2:2

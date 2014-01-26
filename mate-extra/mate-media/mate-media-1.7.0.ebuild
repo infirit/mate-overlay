@@ -19,10 +19,10 @@ IUSE="aac flac gtk3 mp3 pulseaudio speex twolame vorbis"
 COMMON_DEPEND="dev-libs/libxml2:2
 	>=dev-libs/glib-2.18.2:2
 	!gtk3? ( x11-libs/gtk+:2
-			>=dev-libs/libunique-1:1
+			dev-libs/libunique:1
 			media-libs/libcanberra[gtk] )
 	gtk3? ( x11-libs/gtk+:3
-			>=dev-libs/libunique:3
+			dev-libs/libunique:3
 			media-libs/libcanberra[gtk3] )
 	>=mate-base/mate-panel-1.7.0
 	>=mate-base/mate-desktop-1.7.0

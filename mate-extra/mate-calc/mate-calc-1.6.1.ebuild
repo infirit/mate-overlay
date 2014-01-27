@@ -27,13 +27,3 @@ DEPEND="${RDEPEND}
 	>=app-text/mate-doc-utils-1.2.1"
 
 DOCS="AUTHORS ChangeLog NEWS README"
-
-src_prepare() {
-	sed -e 's:AC_ARG_WITH(\[gtk+\]:AC_ARG_WITH([gtk]:' \
-		-i configure.ac || die "sed failed"
-
-	# Tarball has no proper build system, should be fixed on next release.
-	mate_gen_build_system
-
-	gnome2_src_prepare
-}

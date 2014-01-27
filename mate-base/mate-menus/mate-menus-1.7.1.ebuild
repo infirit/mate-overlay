@@ -16,7 +16,7 @@ HOMEPAGE="http://mate-desktop.org"
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="debug gtk3 +introspection python"
+IUSE="debug +introspection python"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 RDEPEND=">=dev-libs/glib-2.18
@@ -40,9 +40,6 @@ src_configure() {
 	if ! use debug ; then
 		G2CONF="${G2CONF} --enable-debug=minimum"
 	fi
-
-	use gtk3 && G2CONF="${G2CONF} --with-gtk=3.0"
-	use !gtk3 && G2CONF="${G2CONF} --with-gtk=2.0"
 
 	if use python; then
 		python_copy_sources

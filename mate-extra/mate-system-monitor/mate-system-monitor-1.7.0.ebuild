@@ -36,3 +36,10 @@ DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35"
 
 DOCS="AUTHORS ChangeLog NEWS README"
+
+src_configure() {
+	use gtk3 && G2CONF="${G2CONF} --with-gtk=3.0"
+	use ~gtk3 && G2CONF="${G2CONF} --with-gtk=2.0"
+
+	gnome2_src_configure
+}

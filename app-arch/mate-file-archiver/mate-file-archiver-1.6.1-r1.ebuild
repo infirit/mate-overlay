@@ -28,6 +28,14 @@ DEPEND="${RDEPEND}
 	>=mate-base/mate-common-1.2.2"
 
 src_prepare() {
+	# Fix some instalation paths
+	sed -e 's|PACKAGE|PACKAGE_NAME|' -i \
+	src/commands/Makefile.am src/sh/Makefile.am || die
+	sed -e 's|$(pkgdatadir)|$(datadir)/$(PACKAGE_NAME)|' -i \
+		data/icons/16x16/actions/Makefile.am \
+		data/icons/24x24/actions/Makefile.am || die
+	eautoreconf
+
 	gnome2_src_prepare
 
 	# Drop DEPRECATED flags as configure option doesn't do it, bug #385453

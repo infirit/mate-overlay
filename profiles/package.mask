@@ -30,5 +30,14 @@ app-admin/mate-system-tools
 >=app-arch/engrampa-1.7
 >=x11-misc/mate-notification-daemon-1.7
 >=mate-extra/mate-media-1.7
+>=mate-extra/mate-user-share-1.7
+>=mate-extra/mate-utils-1.7
+>=media-gfx/eom-1.7
+>=net-analyzer/mate-netspeed-1.7
+>=x11-misc/mozo-1.7
+>=x11-wm/marco-1.7
 >=mate-base/mate-menus-1.7
+>=app-admin/mate-system-tool-1.7
+>=mate-base/mate-control-center-1.7
+
 

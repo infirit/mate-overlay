@@ -18,9 +18,11 @@ IUSE="gtk3 ipv6 networkmanager policykit"
 
 RDEPEND=">=dev-libs/glib-2.22:2
 	!gtk3? ( x11-libs/gtk+:2
-			x11-libs/libwnck:2 )
+			x11-libs/libwnck:1
+			gnome-extra/gucharmap:0 )
 	gtk3? ( x11-libs/gtk+:3
-			x11-libs/libwnck:3 )
+			x11-libs/libwnck:3
+			gnome-extra/gucharmap:3 )
 	>=mate-base/mate-panel-1.7.0
 	>=x11-libs/libxklavier-4.0
 	>=mate-base/mate-desktop-1.7.3
@@ -35,7 +37,6 @@ RDEPEND=">=dev-libs/glib-2.22:2
 	>=mate-base/mate-settings-daemon-1.7.0
 	gnome-base/libgtop:2
 	sys-power/cpufrequtils
-	mate-extra/mate-character-map
 	dev-python/pygobject:3
 	networkmanager? ( >=net-misc/networkmanager-0.7.0 )
 	policykit? ( >=sys-auth/polkit-0.92 )"

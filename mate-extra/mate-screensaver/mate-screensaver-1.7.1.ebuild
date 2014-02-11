@@ -46,13 +46,6 @@ DEPEND="${RDEPEND}
 	systemd? ( sys-apps/systemd )
 	consolekit? ( sys-auth/consolekit )"
 
-src_prepare() {
-	# We use gnome-keyring now, update pam file
-	sed -e 's:mate_keyring:gnome_keyring:g' -i data/mate-screensaver || die "sed failed"
-	gnome2_src_prepare
-
-}
-
 src_configure() {
 	DOCS="AUTHORS ChangeLog NEWS README"
 

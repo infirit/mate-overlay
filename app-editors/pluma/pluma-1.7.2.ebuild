@@ -44,7 +44,6 @@ DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.40
 	virtual/pkgconfig
 	>=app-text/scrollkeeper-0.3.11
-	app-text/mate-doc-utils
 	~app-text/docbook-xml-dtd-4.1.2
 	>=mate-base/mate-common-1.7.0"
 

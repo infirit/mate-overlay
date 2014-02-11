@@ -38,12 +38,6 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
 src_prepare() {
-	# fix python automagic in configure.in
-	epatch "${FILESDIR}/${PN}-1.5.0-fix-automagic-python-support.patch"
-	# fix undefined use of MKDIR_P in python/Makefile.am
-	epatch "${FILESDIR}/${PN}-1.6.1-fix-mkdirp.patch"
-	eautoreconf
-
 	python_copy_sources
 	python_foreach_impl run_in_build_dir gnome2_src_prepare
 }

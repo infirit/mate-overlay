@@ -24,8 +24,7 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext
 	virtual/pkgconfig
 	app-text/scrollkeeper
-	>=dev-util/intltool-0.35
-	>=app-text/mate-doc-utils-1.2.1"
+	>=dev-util/intltool-0.35"
 
 src_configure() {
 	DOCS="AUTHORS ChangeLog NEWS README"

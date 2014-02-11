@@ -25,7 +25,6 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext
 	>=dev-util/intltool-0.35
 	virtual/pkgconfig
-	>=app-text/mate-doc-utils-1.2.1
 	>=mate-base/mate-common-1.7.0
 	!!app-arch/mate-file-archiver"
 

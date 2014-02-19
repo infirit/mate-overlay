@@ -1,5 +1,3 @@
-#Mask caja-dropbox for now. I have no idea how this works.
->=mate-extra/caja-dropbox-0.7.1
 # Mask mate-system-tools for now, needs testing
 app-admin/mate-system-tools
 #Mask new development release

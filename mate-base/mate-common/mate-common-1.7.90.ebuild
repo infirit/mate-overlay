@@ -14,10 +14,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-src_prepare() {
-	eautoreconf
-}
-
 src_install() {
 	base_src_install
 	mv doc-build/README README.doc-build || die "renaming doc-build/README failed"

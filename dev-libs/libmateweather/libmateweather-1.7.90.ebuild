@@ -43,7 +43,7 @@ src_prepare() {
 }
 
 src_configure() {
-	DOCS="AUTHORS ChangeLog MAINTAINERS NEWS"
+	DOCS="AUTHORS ChangeLog NEWS"
 
 	G2CONF="${G2CONF}
 		--enable-locations-compression

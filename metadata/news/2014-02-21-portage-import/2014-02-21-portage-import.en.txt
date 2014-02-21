@@ -1,0 +1,17 @@
+Title: MATE being added to Portage
+Author: Sander Sweers <infirit@gmail.com>
+Content-Type: text/plain
+Posted: 2014-02-21
+Revision: 1
+News-Item-Format: 1.0
+
+After a long periode of living in the mate-overlay MATE is in the
+process if being added to Portage. However this does mean there
+will be a periode that MATE will be masked in the portage tree.
+During the import MATE will be masked in portage and you will need
+to unmask MATE that comes from the overlay. I have prepared an
+example file that unmasks MATE from the overlay only [1]. Do not
+unmask the any of the official ebuilds until the import is complete.
+
+
+[1] http://dpaste.com/hold/1647465/

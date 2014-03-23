@@ -45,7 +45,8 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	>=app-text/scrollkeeper-0.3.11
 	~app-text/docbook-xml-dtd-4.1.2
-	>=mate-base/mate-common-1.7.0"
+	>=mate-base/mate-common-1.7.0
+	!!app-editors/mate-text-editor"
 
 src_configure() {
 	DOCS="AUTHORS ChangeLog NEWS README"

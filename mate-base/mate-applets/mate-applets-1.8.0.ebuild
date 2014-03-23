@@ -73,9 +73,9 @@ src_install() {
 	python_fix_shebang invest-applet timer-applet/src
 	gnome2_src_install
 
-	local APPLETS="accessx-status battstat charpick cpufreq drivemount geyes
-			invest-applet mateweather mini-commander mixer modemlights
-			multiload null_applet stickynotes timer-applet trashapplet"
+	local APPLETS="accessx-status battstat charpick command cpufreq drivemount
+			geyes invest-applet mateweather mini-commander mixer modemlights
+			multiload null_applet stickynotes timerapplet trashapplet"
 
 	for applet in ${APPLETS}; do
 		docinto ${applet}

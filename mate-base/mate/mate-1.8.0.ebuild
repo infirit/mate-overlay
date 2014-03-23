@@ -34,6 +34,7 @@ RDEPEND=">=mate-base/libmatekbd-1.8.0[gtk3?]
 	>=x11-terms/mate-terminal-1.8.0
 	>=mate-base/mate-applets-1.8.0
 	virtual/notification-daemon
+	gnome-extra/yelp
 	extras? (
 		>=mate-extra/mate-power-manager-1.8.0
 		>=app-editors/pluma-1.8.0

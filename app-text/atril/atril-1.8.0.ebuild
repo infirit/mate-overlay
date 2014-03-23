@@ -6,7 +6,7 @@ EAPI="5"
 GCONF_DEBUG="yes"
 GNOME2_LA_PUNT="yes"
 
-inherit mate
+inherit autotools mate
 
 DESCRIPTION="Atril document viewer for MATE"
 HOMEPAGE="http://mate-desktop.org"
@@ -54,6 +54,9 @@ RESTRICT="test"
 src_prepare() {
 	# Fix .desktop categories, upstream bug #666346
 	sed -e "s:GTK\;Graphics\;VectorGraphics\;Viewer\;:GTK\;Office\;Viewer\;Graphics\;VectorGraphics;:g" -i data/atril.desktop.in.in || die
+
+	# Always autoreconf due to lib path conflict
+	eautoreconf
 
 	gnome2_src_prepare
 }

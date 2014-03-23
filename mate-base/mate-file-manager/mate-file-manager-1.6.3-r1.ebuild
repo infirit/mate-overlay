@@ -41,6 +41,9 @@ PDEPEND="mate? ( >=x11-themes/mate-icon-theme-1.2.0 )"
 src_prepare() {
 	gnome2_src_prepare
 
+	# Fix caja spawning 10 x-caja windows
+	epatch "${FILESDIR}/caja-multiple-windows-fix.patch"
+
 	# Remove -n
 	sed -e 's:Exec=caja -n:Exec=caja:g' -i \
 		data/caja.desktop || die

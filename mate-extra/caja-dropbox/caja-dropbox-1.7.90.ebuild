@@ -9,14 +9,13 @@ inherit autotools eutils python-single-r1 linux-info mate user
 
 DESCRIPTION="Store, Sync and Share Files Online"
 HOMEPAGE="http://www.dropbox.com/"
-SRC_URI="http://pub.mate-desktop.org/releases/1.4/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 x86 ~x86-linux"
 IUSE="debug"
 
-RDEPEND="mate-base/mate-file-manager
+RDEPEND="( mate-base/mate-file-manager || mate-base/caja )
 	dev-libs/glib:2
 	dev-python/pygtk:2[${PYTHON_USEDEP}]
 	net-misc/dropbox

@@ -22,7 +22,7 @@ RDEPEND=">=dev-libs/glib-2.22:2
 			gnome-extra/gucharmap:0 )
 	gtk3? ( x11-libs/gtk+:3
 			x11-libs/libwnck:3
-			gnome-extra/gucharmap:3 )
+			gnome-extra/gucharmap:2.90 )
 	>=mate-base/mate-panel-1.7.0
 	>=x11-libs/libxklavier-4.0
 	>=mate-base/mate-desktop-1.7.3

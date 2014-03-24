@@ -30,7 +30,7 @@ RDEPEND=">=dev-libs/glib-2.20:2
 	>=dev-libs/dbus-glib-0.70"
 
 DEPEND="${RDEPEND}
-	>=app-text/mate-doc-utils-1.6.0
+	app-text/yelp-tools
 	virtual/pkgconfig
 	>=app-text/scrollkeeper-0.3.11
 	>=dev-util/intltool-0.35"

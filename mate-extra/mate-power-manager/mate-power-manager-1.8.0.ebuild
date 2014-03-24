@@ -44,7 +44,7 @@ DEPEND="${COMMON_DEPEND}
 	app-text/docbook-xml-dtd:4.3
 	virtual/pkgconfig
 	>=dev-util/intltool-0.35
-	app-text/mate-doc-utils
+	app-text/yelp-tools
 	man? ( app-text/docbook-sgml-utils
 			>=app-text/docbook-sgml-dtd-4.3 )"
 

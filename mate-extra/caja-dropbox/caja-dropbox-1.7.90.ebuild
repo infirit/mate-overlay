@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="amd64 x86 ~x86-linux"
 IUSE="debug"
 
-RDEPEND="( mate-base/mate-file-manager || mate-base/caja )
+RDEPEND="|| ( mate-base/mate-file-manager mate-base/caja )
 	dev-libs/glib:2
 	dev-python/pygtk:2[${PYTHON_USEDEP}]
 	net-misc/dropbox
@@ -43,14 +43,17 @@ src_prepare() {
 	# use sysem dropbox
 	sed -e "s|~/[.]dropbox-dist|/opt/dropbox|" \
 		-e 's|\(DROPBOXD_PATH = \).*|\1"/opt/dropbox/dropboxd"|' \
-			-i dropbox.in || die
-	# us system rst2man
+			-i caja-dropbox.in || die
+	#Fix desktop file
+	sed -e 's|Exec=dropbox|Exec=caja-dropbox|' \
+			-i data/caja-dropbox.desktop || die
+	# use system rst2man
 	epatch "${FILESDIR}"/${PN}-0.7.0-system-rst2man.patch
 	AT_NOELIBTOOLIZE=yes eautoreconf
 }
 
 src_install () {
-	python_fix_shebang dropbox.in
+	python_fix_shebang caja-dropbox.in
 
 	gnome2_src_install
 

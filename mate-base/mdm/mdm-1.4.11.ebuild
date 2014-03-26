@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
+EAPI="5"
 
 inherit mate pam user
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://mate-desktop.org"
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="accessibility afs +consolekit dmx elibc_glibc ipv6 mate-keyring pam remote selinux tcpd xinerama"
+IUSE="accessibility afs +consolekit dmx elibc_glibc ipv6 gnome-keyring pam remote selinux tcpd xinerama"
 GDM_EXTRA="gdm-2.20.9-gentoo-files-r1"
 SRC_URI="https://github.com/linuxmint/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz
 	mirror://gentoo/${GDM_EXTRA}.tar.bz2"
@@ -40,7 +40,7 @@ RDEPEND=">=dev-libs/glib-2.12:2
 	accessibility? ( x11-libs/libXevie )
 	afs? ( net-fs/openafs sys-libs/lwp )
 	dmx? ( x11-libs/libdmx )
-	mate-keyring? ( mate-base/mate-keyring[pam] )
+	gnome-keyring? ( gnome-base/gnome-keyring[pam] )
 	pam? ( virtual/pam )
 	!pam? ( elibc_glibc? ( sys-apps/shadow ) )
 	remote? ( gnome-extra/zenity )
@@ -67,7 +67,7 @@ pkg_setup() {
 		--with-xdmcp=yes
 		--with-pam-prefix=/etc
 		--disable-static
-		SOUND_PROGRAM=/usr/bin/gdmplay
+		SOUND_PROGRAM=/usr/bin/mdmplay
 		$(use_enable ipv6)
 		$(use_enable remote secureremote)
 		$(use_with accessibility xevie)

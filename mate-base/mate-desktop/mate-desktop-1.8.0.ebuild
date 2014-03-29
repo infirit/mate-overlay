@@ -31,6 +31,7 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	app-text/yelp-tools
 	~app-text/docbook-xml-dtd-4.1.2
+	gnome-base/dconf   
 	x11-proto/xproto
 	>=x11-proto/randrproto-1.2"
 

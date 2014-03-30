@@ -20,7 +20,8 @@ IUSE="doc"
 
 # Depend on pygobject:3 for sanity, and because it's automagic
 RDEPEND="dev-python/pygobject:3[${PYTHON_USEDEP}]
-	mate-base/mate-file-manager[introspection]
+	|| ( mate-base/mate-file-manager[introspection]
+		mate-base/caja[introspection] )
 	${PYTHON_DEPS}"
 DEPEND="${RDEPEND}
 	doc? (

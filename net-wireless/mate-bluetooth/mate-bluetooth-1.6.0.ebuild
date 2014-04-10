@@ -24,12 +24,12 @@ COMMON_DEPEND="dev-libs/glib:2
 	dev-libs/libunique:1"
 
 RDEPEND="${COMMON_DEPEND}
-	net-wireless/bluez
 	app-mobilephone/obexd
 	virtual/udev
 	introspection? ( dev-libs/gobject-introspection )"
 
 DEPEND="${COMMON_DEPEND}
+	<net-wireless/bluez-5.0
 	!net-wireless/bluez-gnome
 	app-text/docbook-xml-dtd:4.1.2
 	>=app-text/mate-doc-utils-1.2.1

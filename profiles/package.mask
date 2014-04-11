@@ -1,5 +1,10 @@
 # Mask mate-system-tools for now, needs testing
 app-admin/mate-system-tools
+
+# mate-bluetooth fails to build and is obsolete upstream
+# user should move to blueman
+net-wireless/mate-bluetooth
+
 #Mask new development release
 >=mate-base/mate-common-1.7
 >=mate-base/mate-desktop-1.7

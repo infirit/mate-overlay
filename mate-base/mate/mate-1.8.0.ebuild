@@ -44,8 +44,7 @@ RDEPEND=">=mate-base/libmatekbd-1.8.0[gtk3?]
 		>=mate-extra/mate-system-monitor-1.8.0
 		>=mate-extra/mate-calc-1.8.0
 		>=mate-extra/mate-screensaver-1.8.0
-	)
-	bluetooth? ( >=net-wireless/mate-bluetooth-1.6.0 )"
+	)"
 
 pkg_postinst() {
 	elog "If you found a bug and have a solution, contact joost_op in #sabayon-dev at freenode.net."
@@ -56,8 +55,4 @@ pkg_postinst() {
 	elog "Run it with 'python2 /usr/$(get_libdir)/mate-desktop/mate-conf-import'"
 	elog "For support with this script see the following url"
 	elog "http://forums.mate-desktop.org/viewtopic.php?f=16&t=1650"
-	if use bluetooth; then
-		ewarn "In MATE 1.8 mate-bluetooth was removed in favour of"
-		ewarn "blueman. Version 1.6 will still work on MATE 1.8"
-	fi
 }

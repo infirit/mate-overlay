@@ -1,0 +1,7 @@
+move media-gfx/mate-image-viewer media-gfx/eom
+move app-text/mate-document-viewer app-text/atril
+move x11-wm/mate-window-manager x11-wm/marco
+move app-arch/mate-file-archiver app-arch/engrampa
+move x11-misc/mate-menu-editor x11-misc/mozo
+move app-editors/mate-text-editor app-editors/pluma
+move mate-base/mate-file-manager mate-base/caja

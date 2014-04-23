@@ -26,6 +26,7 @@ DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35
 	virtual/pkgconfig
 	>=mate-base/mate-common-1.7.0
+	>=dev-libs/json-glib-0.14.0
 	!!app-arch/mate-file-archiver"
 
 src_prepare() {

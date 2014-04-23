@@ -19,9 +19,11 @@ IUSE="gtk3 ipv6 networkmanager policykit"
 RDEPEND=">=dev-libs/glib-2.22:2
 	!gtk3? ( x11-libs/gtk+:2
 			x11-libs/libwnck:1
+			x11-libs/gtksourceview:2.0
 			gnome-extra/gucharmap:0 )
 	gtk3? ( x11-libs/gtk+:3
 			x11-libs/libwnck:3
+			x11-libs/gtksourceview:3.0
 			gnome-extra/gucharmap:2.90 )
 	>=mate-base/mate-panel-1.7.0
 	>=x11-libs/libxklavier-4.0

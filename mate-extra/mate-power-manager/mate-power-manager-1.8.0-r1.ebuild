@@ -63,6 +63,7 @@ src_prepare() {
 	# https://github.com/mate-desktop/mate-power-manager/commit/8f734c6
 	epatch "${FILESDIR}/mate-power-manager_other-round-of-fixes-for-UPower-0.99-API-changes.patch"
 
+	eautoreconf
 	gnome2_src_prepare
 
 	if ! use man; then

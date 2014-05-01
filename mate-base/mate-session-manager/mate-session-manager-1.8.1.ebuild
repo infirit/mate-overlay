@@ -14,7 +14,7 @@ LICENSE="GPL-2 LGPL-2 FDL-1.1"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 
-IUSE="gtk3 ipv6 elibc_FreeBSD systemd"
+IUSE="gtk3 ipv6 elibc_FreeBSD systemd +upower"
 
 # x11-misc/xdg-user-dirs{,-gtk} are needed to create the various XDG_*_DIRs, and
 # create .config/user-dirs.dirs which is read by glib to get G_USER_DIRECTORY_*
@@ -23,7 +23,7 @@ RDEPEND=">=dev-libs/glib-2.16:2
 	gtk3? ( x11-libs/gtk+:3 )
 	!gtk3? ( x11-libs/gtk+:2 )
 	>=dev-libs/dbus-glib-0.76
-	>=sys-power/upower-0.9.0
+	upower? ( >=sys-power/upower-0.9.0 )
 	elibc_FreeBSD? ( dev-libs/libexecinfo )
 
 	x11-libs/libSM
@@ -62,6 +62,7 @@ src_configure() {
 
 	# TODO: convert libnotify to a configure option
 	G2CONF="${G2CONF}
+		$(use_enable upower)
 		--docdir=${EPREFIX}/usr/share/doc/${PF}
 		--with-default-wm=mate-wm"
 

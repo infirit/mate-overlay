@@ -25,7 +25,7 @@ RDEPEND=">=dev-libs/glib-2.16.0
 	>=app-mobilephone/obex-data-server-0.4
 	>=dev-libs/dbus-glib-0.70
 	dev-libs/libunique:1
-	>=mate-base/caja-1.7.0
+	|| ( >=mate-base/mate-file-manager-1.6.0 >=mate-base/caja-1.7.0 )
 	media-libs/libcanberra[gtk]
 	>=net-wireless/mate-bluetooth-1.5.0
 	>=net-wireless/bluez-4.18

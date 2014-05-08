@@ -34,7 +34,9 @@ RDEPEND=">=dev-libs/glib-2.32.0:2
 		t1lib? ( >=media-libs/t1lib-5.0.0 ) )
 	gnome-keyring? ( app-crypt/libsecret )
 	introspection? ( >=dev-libs/gobject-introspection-0.6 )
-	caja? ( >=mate-base/caja-1.7.0[introspection?] )
+	caja? ( || (
+		>=mate-base/mate-file-manager-1.6.0[introspection?]
+		>=mate-base/caja-1.7.0[introspection?] ) )
 	ps? ( >=app-text/libspectre-0.2.0 )
 	tiff? ( >=media-libs/tiff-3.6:0 )
 	xps? ( >=app-text/libgxps-0.0.1 )"

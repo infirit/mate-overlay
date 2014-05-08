@@ -26,11 +26,17 @@ RDEPEND="x11-libs/libXft
 			media-libs/libcanberra[gtk] )
 	>=dev-libs/glib-2.28:2
 	>=gnome-base/librsvg-2.0:2
-	>=mate-base/caja-1.7.0
+	|| (
+		>=mate-base/caja-1.8:0
+		>=mate-base/mate-file-manager-1.6:0
+	)
 	>=media-libs/fontconfig-1
 	>=dev-libs/dbus-glib-0.73
 	>=x11-libs/libxklavier-4.0
-	>=x11-wm/marco-1.7.0
+	|| (
+		>=x11-wm/marco-1.8:0
+		>=x11-wm/mate-window-manager-1.6:0
+	)
 	>=mate-base/libmatekbd-1.7.0[gtk3?]
 	>=mate-base/mate-desktop-1.7.0[gtk3?]
 	>=mate-base/mate-menus-1.2.0

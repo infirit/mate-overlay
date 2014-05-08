@@ -20,7 +20,7 @@ IUSE="image-converter +open-terminal share ${SENDTO}"
 
 RDEPEND=">=x11-libs/gtk+-2.18:2
 	>=dev-libs/glib-2.25.9:2
-	>=mate-base/caja-1.8.0
+	|| ( >=mate-base/mate-file-manager-1.6.0 >=mate-base/caja-1.8.0 )
 	open-terminal? ( >=mate-base/mate-desktop-1.6.0 )
 	cdr? ( >=app-cdr/brasero-2.32.1 )
 	gajim? (

@@ -20,7 +20,9 @@ IUSE="gtk3 caja"
 RDEPEND=">=dev-libs/glib-2.25.5:2
 	!gtk3? ( x11-libs/gtk+:2 )
 	gtk3? ( x11-libs/gtk+:3 )
-	caja? ( >=mate-base/caja-1.7.0 )"
+	caja? ( || (
+		>=mate-base/caja-1.7.0
+		>=mate-base/mate-file-manager-1.6.0 ) )"
 DEPEND="${RDEPEND}
 	sys-devel/gettext
 	>=dev-util/intltool-0.35

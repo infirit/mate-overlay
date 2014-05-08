@@ -1,6 +1,6 @@
-<app-arch/mate-file-archiver-1.6.0 gtk3
+<app-arch/mate-file-archiver-1.9.0 gtk3
 <app-arch/engrampa-1.9.0 gtk3
-<app-editors/mate-text-editor-1.6.0 gtk3
+<app-editors/mate-text-editor-1.9.0 gtk3
 <app-editors/pluma-1.9.0 gtk3
 <app-text/mate-document-viewer-1.6.0 gtk3
 <app-text/atril-1.9.0 gtk3

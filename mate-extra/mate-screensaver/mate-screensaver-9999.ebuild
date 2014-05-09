@@ -93,7 +93,7 @@ src_install() {
 	# Install the conversion script in the documentation.
 	dodoc "${S}"/data/migrate-xscreensaver-config.sh
 	dodoc "${S}"/data/xscreensaver-config.xsl
-	dodoc "${FILESDIR}"/xss-conversion.txt
+	dodoc "${FILESDIR}"/xss-conversion-2.txt
 
 	# Non PAM users will need this suid to read the password hashes.
 	# OpenPAM users will probably need this too when
@@ -122,5 +122,5 @@ pkg_postinst() {
 	fi
 
 	elog "Information for converting screensavers is located in "
-	elog "/usr/share/doc/${PF}/xss-conversion.txt.${PORTAGE_COMPRESS}"
+	elog "/usr/share/doc/${PF}/xss-conversion-2.txt.${PORTAGE_COMPRESS}"
 }

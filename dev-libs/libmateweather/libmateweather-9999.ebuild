@@ -59,6 +59,9 @@ src_configure() {
 		myconf="${myconf} --enable-gtk-doc"
 	fi
 
+	use gtk3 && myconf="${myconf} --with-gtk=3.0"
+	use !gtk3 && myconf="${myconf} --with-gtk=2.0"
+
 	python_foreach_impl run_in_build_dir gnome2_src_configure \
 		--enable-locations-compression \
 		--disable-all-translations-in-one-xml \

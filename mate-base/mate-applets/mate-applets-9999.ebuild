@@ -41,7 +41,7 @@ RDEPEND="${PYTHON_DEPS}
 	>=mate-base/mate-settings-daemon-1.6:0[gtk3?]
 	>=sys-apps/dbus-1.1.2:0
 	sys-power/cpufrequtils:0
-	>=sys-power/upower-0.9.4:0
+	|| ( >=sys-power/upower-0.9.4 sys-power/upower-pm-utils )
 	!gtk3? ( >=x11-libs/gtk+-2.24:2
 			>=x11-libs/libwnck-2.30:1
 			x11-libs/gtksourceview:2.0

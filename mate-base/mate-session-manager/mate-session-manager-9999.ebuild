@@ -50,7 +50,13 @@ RDEPEND=">=dev-libs/dbus-glib-0.76:0
 	virtual/libintl:0
 	elibc_FreeBSD? ( dev-libs/libexecinfo:0 )
 	gnome-keyring? ( gnome-base/gnome-keyring:0 )
-	upower? ( >=sys-power/upower-0.9.0:0 )"
+	systemd? ( sys-apps/systemd:0 )
+	upower? (
+		|| (
+			( >=sys-power/upower-0.9.0 <sys-power/upower-0.99 )
+			sys-power/upower-pm-utils
+		)
+	)"
 
 DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.40:*
@@ -58,8 +64,7 @@ DEPEND="${RDEPEND}
 	>=mate-base/mate-common-1.8:0
 	>=sys-devel/gettext-0.10.40:*
 	virtual/pkgconfig:*
-	!<gnome-base/gdm-2.20.4:0
-	systemd? ( sys-apps/systemd:0 )"
+	!<gnome-base/gdm-2.20.4:0"
 
 src_prepare() {
 	# Add "session saving" button back,

@@ -24,7 +24,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
 
-IUSE="caja dbus debug djvu dvi gtk3 +introspection gnome-keyring +ps t1lib tiff xps"
+IUSE="caja dbus debug djvu dvi epub gtk3 +introspection gnome-keyring +ps t1lib tiff xps"
 
 RDEPEND=">=app-text/poppler-0.14:0=[cairo]
 	app-text/rarian:0
@@ -33,8 +33,10 @@ RDEPEND=">=app-text/poppler-0.14:0=[cairo]
 	>=dev-libs/libxml2-2.5:2
 	>=mate-base/mate-desktop-1.9:0[gtk3?]
 	sys-libs/zlib:0
-	gtk3? ( >=x11-libs/gtk+-3.0:3[introspection?] )
+	gtk3? ( >=x11-libs/gtk+-3.0:3[introspection?] 
+			epub? ( net-libs/webkit-gtk:2 )
 	!gtk3? ( >=x11-libs/gtk+-2.21.5:2[introspection?]
+			epub? ( net-libs/webkit-gtk:3 )
 			x11-libs/gdk-pixbuf:2 )
 	x11-libs/libICE:0
 	>=x11-libs/libSM-1:0
@@ -76,6 +78,7 @@ src_prepare() {
 	# Always autoreconf due to lib path conflict.
 	eautoreconf
 
+	gnome2_environment_reset
 	gnome2_src_prepare
 }
 
